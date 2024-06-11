@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+<!-- このプロジェクトで使うActionファイルが保存されているパッケージを宣言 -->
+    <!-- 1, Struts2の挙動を制御する設定、name:設定名、value:設定値、をそれぞれ記述！※この研修では毎回同じ値を使う -->
+    <constant name="struts.devMode" value="true" />
+
+    <!-- 2, Actionファイルが保存されているパッケージ名を記述 -->
+    <package name="com.diworksdev.webproj4.action" extends="struts-default">
+
+        <!-- 呼び出されるJavaクラスファイルと実行するメソッドを宣言 -->
+        <!-- 3, プロジェクト内で使うActionファイルを記述 -->
+        <!-- 4, パッケージ名、Actionクラス名の順で記述 ※③で呼び出されたActionクラスの場所を記述 -->
+        <!-- 5, 普通はexecuteメソッドを記述 ※③で呼び出されたActionクラスのどのメソッドが呼ばれるかを記述 -->
+        <action name="HelloStrutsAction" class="com.diworksdev.webproj4.action.HelloStrutsAction" method="execute">
+
+            <!-- execute()メソッドから返ってきた値によって、次に遷移するJSPを振り分け -->
+            <!-- 6, ⑤のメソッドからSUCCESSが返された場合、ここで記述したJSPファイルに遷移 -->
+            <!-- 6, ⑤のメソッドからERRORが返された場合、ここで記述したJSPファイルに遷移 -->
+            <result name="success">hello.jsp</result>
+            <result name="error">helloStrutsError.jsp</result>
+        </action>
+
+    </package>
+</struts>
