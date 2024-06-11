@@ -10,10 +10,15 @@
         <title>INDEX</title>
     </head>
     <body>
+    <!-- 実行した時のブラウザに表示されるサブミットの部分 -->
     <!-- "HelloStrutsAction"の部分はstruts.xmlファイルの一部分にアクションし,整理した情報を次のページで表示する -->
         <body>
         <s:form action="HelloStrutsAction">
             <s:submit value="HelloStruts"/>
+        </s:form>
+
+        <s:form action="WelcomeAction">
+            <s:submit value="Welcome"/>
         </s:form>
     </body>
 </html>

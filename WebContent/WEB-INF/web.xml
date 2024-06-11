@@ -9,7 +9,7 @@ id="WebApp_ID" version="3.1">
 
     <welcome-file-list>
     <!-- 一番最初に表示されるJSPファイルを設定,初期画面にしたいJSPファイル名を書く -->
-        <welcome-file>index.htm</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
 
     <filter>
