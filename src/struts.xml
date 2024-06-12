@@ -59,7 +59,7 @@
             <result name="success">inquiry.jsp</result>
         </action>
 
-         <!-- 呼び出されるJavaクラスファイルと実行するメソッドを宣言 -->
+        <!-- 呼び出されるJavaクラスファイルと実行するメソッドを宣言 -->
         <!-- 3, プロジェクト内で使うActionファイルを記述 -->
         <!-- 4, パッケージ名、Actionクラス名の順で記述 ※③で呼び出されたActionクラスの場所を記述 -->
         <!-- 5, 普通はexecuteメソッドを記述 ※③で呼び出されたActionクラスのどのメソッドが呼ばれるかを記述 -->
@@ -68,6 +68,17 @@
              <!-- execute()メソッドから返ってきた値によって、次に遷移するJSPを振り分け -->
             <!-- 6, ⑤のメソッドからSUCCESSが返された場合、ここで記述したJSPファイルに遷移 -->
             <result name="success">inquiryComplete.jsp</result>
+        </action>
+
+        <!-- 呼び出されるJavaクラスファイルと実行するメソッドを宣言 -->
+        <!-- 3, プロジェクト内で使うActionファイルを記述 -->
+        <!-- 4, パッケージ名、Actionクラス名の順で記述 ※③で呼び出されたActionクラスの場所を記述 -->
+        <!-- 5, 普通はexecuteメソッドを記述 ※③で呼び出されたActionクラスのどのメソッドが呼ばれるかを記述 -->
+        <action name="TestAction" class="com.diworksdev.webproj4.action.TestAction" method="execute">
+
+            <!-- execute()メソッドから返ってきた値によって、次に遷移するJSPを振り分け -->
+            <!-- 6, ⑤のメソッドからSUCCESSが返された場合、ここで記述したJSPファイルに遷移 -->
+            <result name="success">test.jsp</result>
         </action>
     </package>
 </struts>
