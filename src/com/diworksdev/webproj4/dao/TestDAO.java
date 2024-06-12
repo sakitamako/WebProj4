@@ -154,7 +154,7 @@ public class TestDAO {
 		//try.catchはjavaの例外処理のための構文
 		try {
 
-			/⑨con.close()で接続を切る
+			//⑨con.close()で接続を切る
 			//データベースとの接続をクローズ
 			//これをしないとデータベースを接続したまま作業が実行されてしまってメモリに負荷がかかる
 			con.close();
