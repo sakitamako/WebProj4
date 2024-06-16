@@ -45,7 +45,7 @@ public class TestAction extends ActionSupport {
 		loginDTOList = dao.select(username, password);
 
 		//戻り値
-				//処理結果を返す
+		//処理結果を返す
 		return ret;
 
 	}
