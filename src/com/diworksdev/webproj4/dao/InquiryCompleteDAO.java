@@ -10,6 +10,8 @@ import java.util.List;
 import com.diworksdev.webproj4.dto.InquiryDTO;
 import com.diworksdev.webproj4.util.DBConnector;
 
+//DAOクラスでは、Actionから送られてきた情報を使ってDBへ問い合わせを行うファイル
+//問い合わせて取得した値をDTOクラスに格納するファイル
 public class InquiryCompleteDAO {
 
 	//インスタンス化
@@ -26,8 +28,10 @@ public class InquiryCompleteDAO {
 		DBConnector db = new DBConnector();
 		Connection con = db.getConnection();
 
-		//④sql文を書く：値は ? を入れておく（どんな値でも使いまわしできるようにするため
-		//?に入る条件を満たしたデータがsqlに代入される
+		//sql文を書く
+		//SELECT データを抽出する
+		//＊ テーブルに含まれる項目全て
+		//FROM 〇〇 〇〇という名前のテーブルからデータを選択する
 		String sql = "select * from inquiry";
 
 		//try.catchはjavaの例外処理のための構文
@@ -73,6 +77,10 @@ public class InquiryCompleteDAO {
 
 		//try.catchはjavaの例外処理のための構文
 		try {
+
+			//⑨con.close()で接続を切る
+			//データベースとの接続をクローズ
+			//これをしないとデータベースを接続したまま作業が実行されてしまってメモリに負荷がかかる
 			con.close();
 
 		//DB接続を終了する際、必ず書くメソッド
@@ -83,8 +91,7 @@ public class InquiryCompleteDAO {
 
 		}
 
-		//戻り値
-		//処理結果を返す
+		//dtoに入った値を呼び出し元であるアクションクラスに渡す
 		return inquiryDTOList;
 
 	}
@@ -103,6 +110,8 @@ public class InquiryCompleteDAO {
 		//③getConnectionの呼び出し（DBと接続する
 		Connection con = db.getConnection();
 
+		//④sql文を書く：値は ? を入れておく（どんな値でも使いまわしできるようにするため
+		//?に入る条件を満たしたデータがsqlに代入される
 		String sql = "insert into inquiry values(?,?,?)";
 
 		//try.catchはjavaの例外処理のための構文
@@ -153,10 +162,10 @@ public class InquiryCompleteDAO {
 		//例外が発生しcatchされてもされなくても、共通してやってほしい処理や、やらなければいけない処理を書くところ。
 		} catch (SQLException e) {
 			e.printStackTrace();
+
 		}
 
-		//戻り値
-		//処理結果を返す
+		//dtoに入った値を呼び出し元であるアクションクラスに渡す
 		return ret;
 	}
 

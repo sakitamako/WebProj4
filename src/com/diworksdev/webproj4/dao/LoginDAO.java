@@ -10,6 +10,8 @@ import java.util.List;
 import com.diworksdev.webproj4.dto.LoginDTO;
 import com.diworksdev.webproj4.util.DBConnector;
 
+//DAOクラスでは、Actionから送られてきた情報を使ってDBへ問い合わせを行うファイル
+//問い合わせて取得した値をDTOクラスに格納するファイル
 public class LoginDAO {
 
 	public String username;
@@ -61,6 +63,7 @@ public class LoginDAO {
 			//データが存在している限り表示する
 			while (rs.next()) {
 
+				//LoginDTOインスタンス化
 				LoginDTO dto = new LoginDTO();
 
 				//⑧結果の処理（select文で取得した値をDTOに格納）
@@ -111,7 +114,7 @@ public class LoginDAO {
 
 		}
 
-		//dtoに入った値を呼び出し元であるActionクラスに渡す
+		//dtoに入った値を呼び出し元であるアクションクラスに渡す
 		return loginDTOList;
 	}
 

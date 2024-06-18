@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+//データベースを使う必要がある場合、DB接続 (コネクション)の設定を行うファイル
+//DBConnectorでは、接続するDBの「場所」「名前」や接続する「ユーザ名」「パスワード」の設定を行う
 public class DBConnector {
 
 	//JDBC ドライバー名
@@ -36,18 +38,18 @@ public class DBConnector {
 		//tryの中でエラーが発生した場合、catchが受け取り
 		//例外がスローされる原因となったエラーまたは動作の説明を返します
 		} catch (ClassNotFoundException e) {
-			e.printStackTrace() ;
+			e.printStackTrace();
 
 		//tryの中でエラーが発生した場合、catchが受け取り
 		//例外がスローされる原因となったエラーまたは動作の説明を返します
 		} catch (SQLException e) {
-			e.printStackTrace() ;
+			e.printStackTrace();
 
 		}
 
 		//MySQLサーバに接続した結果を,
 		//メソッドの呼び出し元に渡します
-		return con ;
+		return con;
 	}
 
 }

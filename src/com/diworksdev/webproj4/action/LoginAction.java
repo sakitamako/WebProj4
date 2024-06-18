@@ -7,6 +7,9 @@ import com.diworksdev.webproj4.dao.LoginDAO;
 import com.diworksdev.webproj4.dto.LoginDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
+//Actionクラスでは、画面から送られてきたリクエストを取得する
+//内部処理に応じてDAOやDTOクラスを呼び出し、最終的に次のJSPへ値を返すファイル
+
 //struts2が持つActionSupportというクラスを継承
 //（Actionクラスは基本的にこのクラスを継承）
 //LoginAciton（子クラス） extends（継承） ActionSupport（親クラス）
@@ -19,7 +22,9 @@ public class LoginAction extends ActionSupport {
 	private String username;
 	private String password;
 
-	//インスタンス化
+	//フィールド変数
+	//JSPから受け取る値
+	//※必ずJSPでの定義と同じ名前にする
 	private List<LoginDTO> LoginDTOList = new ArrayList<LoginDTO>();
 
 	//メソッド名は「execute」
@@ -32,7 +37,8 @@ public class LoginAction extends ActionSupport {
 		System.out.println(username);
 		System.out.println(password);
 
-		//②LoginDAOとLoginDTOのインスタンス化
+		//②インスタンス化
+		//DAOと会話するためのコード
 		LoginDAO dao = new LoginDAO();
 
 		//JSPから送られてきたnameとpasswordを引数として、

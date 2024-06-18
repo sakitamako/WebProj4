@@ -1,5 +1,6 @@
 package com.diworksdev.webproj4.dto;
 
+//DTOクラスは、DAOがDBから取得した値をActionへ戻す時、値を格納するのに利用されるファイル
 public class LoginDTO {
 
 	//テーブルから取得するデータに対応したフィールド変数を宣言

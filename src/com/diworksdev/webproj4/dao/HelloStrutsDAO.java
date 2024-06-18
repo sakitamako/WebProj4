@@ -10,6 +10,8 @@ import java.util.List;
 import com.diworksdev.webproj4.dto.HelloStrutsDTO;
 import com.diworksdev.webproj4.util.DBConnector;
 
+//DAOクラスでは、Actionから送られてきた情報を使ってDBへ問い合わせを行うファイル
+//問い合わせて取得した値をDTOクラスに格納するファイル
 public class HelloStrutsDAO {
 
 	//インスタンス化
@@ -48,7 +50,7 @@ public class HelloStrutsDAO {
 			//データが存在する限り表示する
 			while(rs.next()) {
 
-				//getConnectionの呼び出し（DBと接続する）
+				//HelloStrutsDTOインスタンス化
 				HelloStrutsDTO dto = new HelloStrutsDTO();
 
 				dto.setUserId(rs.getInt("user_id"));
@@ -83,7 +85,7 @@ public class HelloStrutsDAO {
 
 		}
 
-		//dtoに入った値を呼び出し元であるHelloStrutsDTOクラスに渡す
+		//dtoに入った値を呼び出し元であるアクションクラスに渡す
 		return helloStrutsDTOList;
 
 	}
