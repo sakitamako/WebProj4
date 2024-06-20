@@ -22,9 +22,10 @@ public class LoginAction extends ActionSupport {
 	private String username;
 	private String password;
 
-	//フィールド変数
-	//JSPから受け取る値
-	//※必ずJSPでの定義と同じ名前にする
+	//ArrayList=public ArrayList() 初期容量10で空のリストを作成
+	//java.util.List<LoginDTO>順序付けられたコレクション。シーケンスとも呼ばれる。
+	//このインタフェースのユーザーは、リスト内のどこに各要素が挿入されるかを精密に制御できる。
+	//ユーザーは整数値のインデックス(リスト内の位置)によって要素にアクセスしたり、リスト内の要素を検索したりできる
 	private List<LoginDTO> LoginDTOList = new ArrayList<LoginDTO>();
 
 	//メソッド名は「execute」
@@ -47,6 +48,10 @@ public class LoginAction extends ActionSupport {
 		LoginDTOList = dao.select(username, password);
 
 		//aとbが共にtrueの時に処理を実行するそうでない場合はエラー
+		//「this を使う場所 は フィールド変数名の 頭!
+		//また、this は クラス内のメソッドの定義の中でのみ使用できる
+		//thisはメソッドが呼ばれた時に、そのメソッドを呼び出しているインスタンスに置き換えられる
+		//フィールドを宣言するとき、「 public 」や「 private 」などの アクセス修飾子 を記述
 		if (this.username.equals(LoginDTOList.get(0).getUsername()) && this.password.equals(LoginDTOList.get(0).getPassword())){
 
 			ret = SUCCESS;

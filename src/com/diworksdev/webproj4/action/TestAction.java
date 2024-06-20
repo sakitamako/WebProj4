@@ -23,8 +23,10 @@ public class TestAction extends ActionSupport {
 	private String password;
 
 	//フィールド変数
-	//JSPから受け取る値
-	//※必ずJSPでの定義と同じ名前にする
+	//ArrayList=public ArrayList() 初期容量10で空のリストを作成
+	//java.util.List<LoginDTO>順序付けられたコレクション。シーケンスとも呼ばれる。
+	//このインタフェースのユーザーは、リスト内のどこに各要素が挿入されるかを精密に制御できる。
+	//ユーザーは整数値のインデックス(リスト内の位置)によって要素にアクセスしたり、リスト内の要素を検索したりできる
 	private List<LoginDTO> loginDTOList = new ArrayList<LoginDTO>();
 
 	//管理コマンド・メッセージをコマンド・サーバーに送信し、何らかの応答メッセージを待ちます
