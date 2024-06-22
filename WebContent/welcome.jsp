@@ -10,8 +10,7 @@
         <title>WELCOME</title>
     </head>
     <body>
-    <!-- index.jspのサブミットを押した次のページで下記が表示される -->
-        名前とパスワードを入力してください。
+        ユーザー名とパスワードを入力してください。
         <s:form action="LoginAction">
             <s:textfield name="username" label="ユーザー名" />
             <s:password name="password" label="パスワード" />
